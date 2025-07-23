@@ -1,0 +1,132 @@
+
+        /* Base styles */
+        body {
+            font-family: 'Times New Roman', serif;
+            font-weight: 500;
+        }
+        
+        /* Light mode */
+        [data-testid="stAppViewContainer"] {
+            background: linear-gradient(to right, #424242 80%, #008B8B 20%);
+            background-attachment: fixed;
+        }
+        
+        .main .block-container {
+            background-color: rgba(50, 50, 50, 0.92);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+            color: white;
+        }
+        
+        .main .block-container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M30,10 L40,50 L20,60 L70,10 L60,50 L80,40 Z" fill="none" stroke="%23008B8B" stroke-width="0.5" opacity="0.1"/></svg>');
+            background-size: 200px;
+            opacity: 0.3;
+            z-index: -1;
+        }
+        
+        /* Dark mode */
+        .dark [data-testid="stAppViewContainer"] {
+            background: linear-gradient(to right, #212121 80%, #006064 20%);
+        }
+        
+        .dark .main .block-container {
+            background-color: rgba(30, 30, 30, 0.95);
+        }
+        
+        .dark .main .block-container::before {
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M30,10 L40,50 L20,60 L70,10 L60,50 L80,40 Z" fill="none" stroke="%2300CED1" stroke-width="0.5" opacity="0.1"/></svg>');
+        }
+        
+        /* Text styles */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Times New Roman', serif;
+            font-weight: 600;
+            color: #00CED1 !important;
+        }
+        
+        .dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
+            color: #00FFFF !important;
+        }
+        
+        /* Button styles */
+        .stButton>button {
+            font-family: 'Times New Roman', serif;
+            font-weight: 600;
+            border-radius: 6px !important;
+            animation: wobble 2s infinite;
+        }
+        
+        .stButton>button[kind="primary"] {
+            background-color: #008B8B !important;
+            color: white !important;
+            border: none;
+        }
+        
+        .dark .stButton>button[kind="primary"] {
+            background-color: #00CED1 !important;
+            color: #121212 !important;
+        }
+        
+        @keyframes wobble {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(1deg); }
+            50% { transform: rotate(-1deg); }
+            75% { transform: rotate(1deg); }
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            font-size: 0.9em;
+            margin-top: 40px;
+            color: #AAAAAA;
+        }
+        
+        .dark .footer {
+            color: #777777;
+        }
+        
+        /* Text area styling */
+        .stTextArea textarea {
+            background-color: rgba(255, 255, 255, 0.1) !important;
+            color: white !important;
+        }
+        
+        .dark .stTextArea textarea {
+            background-color: rgba(0, 0, 0, 0.2) !important;
+        }
+        
+        /* Logo animation */
+        @keyframes boltPulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        
+        .logo-container {
+            animation: boltPulse 3s infinite;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        
+        /* Success message */
+        .stAlert {
+            background-color: rgba(0, 139, 139, 0.2) !important;
+            border-left: 4px solid #008B8B !important;
+        }
+        
+        .dark .stAlert {
+            background-color: rgba(0, 206, 209, 0.2) !important;
+            border-left: 4px solid #00CED1 !important;
+        }
+        
